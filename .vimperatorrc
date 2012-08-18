@@ -1,0 +1,15 @@
+" Switch tabs easily
+" This overrides horizantal movement, but most web pages resize themselves anyway
+nnoremap h :bp<CR>
+nnoremap l :bn<CR>
+
+" Put homerow first so they are used more often
+set hintchars=hjklasdfgqwertyuiopzxcvbnm
+
+" Faster Scrolling
+nnoremap <S-j> 5j
+nnoremap <S-k> 5k
+
+" Return to normal mode with our old friend, jj
+inoremap jj <C-c>
+cnoremap jj <C-c>
