@@ -1,0 +1,9 @@
+# Set vi to be the default shell command editing mode
+set editing-mode vi
+set keymap vi
+
+# Map jj to movement mode 
+$if mode=vi
+	set keymap vi-insert
+	"jj": vi-movement-mode
+$endif
