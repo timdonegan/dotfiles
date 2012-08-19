@@ -85,3 +85,11 @@ nmap <silent> <leader>s :set nolist!<CR>
 
 " Disable annoying beeps
 set visualbell
+
+" Automatically jump to last known cursor position
+if has("autocmd")
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
