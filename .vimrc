@@ -57,8 +57,9 @@ set smartcase
 set title
 
 " Tabs are four spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Leave space below cursor when strolling
 set scrolloff=3
