@@ -11,5 +11,5 @@ nnoremap <S-j> 5j
 nnoremap <S-k> 5k
 
 " Return to normal mode with our old friend, jj
-inoremap jj <C-c>
+" inoremap jj <C-c>
 cnoremap jj <C-c>
