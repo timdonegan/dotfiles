@@ -88,13 +88,17 @@ nmap <silent> <leader>s :set nolist!<CR>
 set visualbell
 
 " Window navigation and editing with the mapleader
-nmap <silent> <Leader>l <C-w>l
-nmap <silent> <Leader>h <C-w>h
-nmap <silent> <Leader>k <C-w>k
-nmap <silent> <Leader>j <C-w>j
-nmap <silent> <Leader>v <C-w>v
-nmap <silent> <Leader>s <C-w>s
-nmap <silent> <Leader>c <C-w>c
+noremap <silent> <Leader>l <C-w>l
+noremap <silent> <Leader>h <C-w>h
+noremap <silent> <Leader>k <C-w>k
+noremap <silent> <Leader>j <C-w>j
+noremap <silent> <Leader>v <C-w>v
+noremap <silent> <Leader>s <C-w>s
+noremap <silent> <Leader>c <C-w>c
+
+" Faster scrolling
+nmap <C-j> 10j
+nmap <C-k> 10k
 
 " Automatically jump to last known cursor position
 if has("autocmd")
