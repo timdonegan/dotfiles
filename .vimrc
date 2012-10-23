@@ -35,10 +35,6 @@ set number
 inoremap jj <C-c>
 cnoremap jj <C-c>
 
-" Viewport scrolling
-nnoremap <Leader>e 3<C-e>
-nnoremap <Leader>y 3<C-y>
-
 "Use semi-colon to clear highlighted search results
 nmap <silent> <Leader>; :noh<CR>
 
@@ -86,6 +82,9 @@ nmap <silent> <leader>s :set nolist!<CR>
 
 " Disable annoying beeps
 set visualbell
+
+" View buffers
+noremap <silent> <Leader>b :buffers<CR>
 
 " Window navigation and editing with the mapleader
 noremap <silent> <Leader>l <C-w>l
