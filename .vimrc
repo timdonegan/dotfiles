@@ -78,7 +78,7 @@ set incsearch
 
 " View tabs and trailing useful (quite useful!)
 set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>v :set nolist!<CR>
 
 " Disable annoying beeps
 set visualbell
