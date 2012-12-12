@@ -35,10 +35,6 @@ set number
 inoremap jj <C-c>
 cnoremap jj <C-c>
 
-" Viewport scrolling
-nnoremap <Leader>e 3<C-e>
-nnoremap <Leader>y 3<C-y>
-
 "Use semi-colon to clear highlighted search results
 nmap <silent> <Leader>; :noh<CR>
 
@@ -82,10 +78,26 @@ set incsearch
 
 " View tabs and trailing useful (quite useful!)
 set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>w :set nolist!<CR>
 
 " Disable annoying beeps
 set visualbell
+
+" View buffers
+noremap <silent> <Leader>b :buffers<CR>
+
+" Window navigation and editing with the mapleader
+noremap <silent> <Leader>l <C-w>l
+noremap <silent> <Leader>h <C-w>h
+noremap <silent> <Leader>k <C-w>k
+noremap <silent> <Leader>j <C-w>j
+noremap <silent> <Leader>v <C-w>v
+noremap <silent> <Leader>s <C-w>s
+noremap <silent> <Leader>c <C-w>c
+
+" Faster scrolling
+nmap <C-j> 10j
+nmap <C-k> 10k
 
 " Automatically jump to last known cursor position
 if has("autocmd")
