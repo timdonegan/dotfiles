@@ -99,6 +99,9 @@ noremap <silent> <Leader>c <C-w>c
 nmap <C-j> 10j
 nmap <C-k> 10k
 
+" Run Gnu Make
+noremap <Leader>m :make<CR>
+
 " Automatically jump to last known cursor position
 if has("autocmd")
   autocmd BufReadPost *
