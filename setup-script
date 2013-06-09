@@ -8,7 +8,7 @@ then
     if ! [ -a ~/$FILE ]
     then
       echo Creating soft link for $FILE...
-      ln -s ~/$FILE ~/dotfiles/$FILE
+      ln -s ~/dotfiles/$FILE ~/$FILE
     fi
 
     if ! [ -h ~/$FILE ]
