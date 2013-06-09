@@ -13,7 +13,7 @@ then
 
     if ! [ -h ~/$FILE ]
     then
-      echo $FILE already exists.
+      echo $FILE already exists, cannot create link
     fi
   done
 fi
