@@ -4,6 +4,10 @@ set nocompatible
 " Set mapleader
 let mapleader=" "
 
+" Navigation by visual line rather than \n line
+nnoremap j gj
+nnoremap k gk
+
 " Allow changing buffers w/o saving
 set hidden
 
