@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -d ~/dotfiles ]
+then
+
+  for FILE in $(ls -a ~/dotfiles | grep -E '\.[a-z]+(\.conf|rc)')
+  do
+    if ! [ -a ~/$FILE ]
+    then
+      echo Creating soft link for $FILE...
+      ln -s ~/$FILE ~/dotfiles/$FILE
+    fi
+
+    if ! [ -h ~/$FILE ]
+    then
+      echo $FILE already exists.
+    fi
+  done
+fi
