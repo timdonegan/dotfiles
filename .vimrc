@@ -55,7 +55,7 @@ set title
 " Tabs are four spaces
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 
 " Leave space below cursor when strolling
 set scrolloff=3
