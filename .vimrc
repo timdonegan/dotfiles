@@ -4,6 +4,10 @@ set nocompatible
 " Set mapleader
 let mapleader=" "
 
+" Navigation by visual line rather than \n line
+nnoremap j gj
+nnoremap k gk
+
 " Allow changing buffers w/o saving
 set hidden
 
@@ -86,14 +90,22 @@ set visualbell
 " View buffers
 noremap <silent> <Leader>b :buffers<CR>
 
-" Window navigation and editing with the mapleader
+" Split creation
+noremap <silent> <Leader>v <C-w>v
+noremap <silent> <Leader>s <C-w>s
+noremap <silent> <Leader>c <C-w>c
+
+" Split navigation
 noremap <silent> <Leader>l <C-w>l
 noremap <silent> <Leader>h <C-w>h
 noremap <silent> <Leader>k <C-w>k
 noremap <silent> <Leader>j <C-w>j
-noremap <silent> <Leader>v <C-w>v
-noremap <silent> <Leader>s <C-w>s
-noremap <silent> <Leader>c <C-w>c
+
+" Split resizing
+set winheight=30
+set winminheight=5
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Faster scrolling
 nmap <C-j> 10j
