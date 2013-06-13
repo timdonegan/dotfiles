@@ -59,7 +59,7 @@ set title
 " Tabs are four spaces
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 
 " Leave space below cursor when strolling
 set scrolloff=3
@@ -108,8 +108,17 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Faster scrolling
-nmap <C-j> 10j
-nmap <C-k> 10k
+function MultiScroll(OnOff)
+	if a:OnOff == 1
+	  noremap j 5j
+	  noremap k 5k
+	else
+	  noremap j j
+	  noremap k k
+	endif
+endfunction 
+map <silent> <Leader>aj :call MultiScroll(1)<CR>
+map <silent> <Leader>ak :call MultiScroll(0)<CR>
 
 " Run Gnu Make
 noremap <Leader>m :make<CR>
