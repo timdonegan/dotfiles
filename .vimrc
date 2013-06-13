@@ -56,7 +56,7 @@ set smartcase
 " Title
 set title
 
-" Tabs are four spaces
+" Tabs are two spaces
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
