@@ -90,6 +90,9 @@ set visualbell
 " View buffers
 noremap <silent> <Leader>b :buffers<CR>
 
+" Tab changes buffer
+nnoremap <Tab> :bn<CR><CR>
+
 " Split creation
 noremap <silent> <Leader>v <C-w>v
 noremap <silent> <Leader>s <C-w>s
@@ -104,8 +107,6 @@ noremap <silent> <Leader>j <C-w>j
 " Split resizing
 set winheight=30
 set winminheight=5
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " Faster scrolling
 function MultiScroll(OnOff)
