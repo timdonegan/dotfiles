@@ -91,7 +91,7 @@ set visualbell
 noremap <silent> <Leader>b :buffers<CR>
 
 " Tab changes buffer
-nnoremap <Tab> :bn<CR><CR>
+nnoremap <Tab> :bn<CR>
 
 " Split creation
 noremap <silent> <Leader>v <C-w>v
