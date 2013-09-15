@@ -92,6 +92,8 @@ noremap <silent> <Leader>b :buffers<CR>
 
 " Tab changes buffer
 nnoremap <Tab> :bn<CR>
+map <Esc>[Z <S-Tab>
+nnoremap <S-Tab> :bp<CR>
 
 " Split creation
 noremap <silent> <Leader>v <C-w>v
