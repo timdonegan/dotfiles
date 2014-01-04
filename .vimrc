@@ -107,8 +107,8 @@ noremap <silent> <Leader>k <C-w>k
 noremap <silent> <Leader>j <C-w>j
 
 " Split resizing
-set winheight=30
-set winminheight=5
+" set winheight=30
+" set winminheight=5
 
 " Faster scrolling
 function MultiScroll(OnOff)
