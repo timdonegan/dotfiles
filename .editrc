@@ -1,0 +1,7 @@
+bind -v
+
+bind -a "k" ed-prev-history
+bind -a "j" ed-next-history
+
+bind "^R" em-inc-search-prev
+bind -a "^R" em-inc-search-prev
