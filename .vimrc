@@ -164,3 +164,6 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 endif
+
+" Set path to current directory
+set path+=**
