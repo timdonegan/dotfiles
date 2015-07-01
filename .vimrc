@@ -124,6 +124,9 @@ Plugin 'fatih/vim-go'
 " coffee support
 Plugin 'kchmck/vim-coffee-script'
 
+" python autocompletion
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -167,3 +170,6 @@ endif
 
 " Set path to current directory
 set path+=**
+
+" Yapf
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
