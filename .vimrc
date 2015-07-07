@@ -172,4 +172,4 @@ endif
 set path+=**
 
 " Yapf
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>:w<Cr>
