@@ -145,15 +145,17 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Faster scrolling
-function MultiScroll(OnOff)
-	if a:OnOff == 1
-	  noremap j 5j
-	  noremap k 5k
-	else
-	  noremap j j
-	  noremap k k
-	endif
-endfunction 
+if !exists("*MultiScroll")
+    function MultiScroll(OnOff)
+        if a:OnOff == 1
+          noremap j 5j
+          noremap k 5k
+        else
+          noremap j j
+          noremap k k
+        endif
+    endfunction
+endif
 map <silent> <Leader>aj :call MultiScroll(1)<CR>
 map <silent> <Leader>ak :call MultiScroll(0)<CR>
 
@@ -172,4 +174,13 @@ endif
 set path+=**
 
 " Yapf
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>:w<Cr>
+if !exists("*Yapf")
+    function Yapf()
+        ka
+        0,$!yapf
+        silent! 'a
+    endfunction
+endif
+
+autocmd FileType python nnoremap <silent> <leader>y :call Yapf()<Cr>:w<Cr>
+autocmd BufWritePre *.py call Yapf()
