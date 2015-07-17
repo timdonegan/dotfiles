@@ -179,6 +179,7 @@ if !exists("*Yapf")
         kb
         let current_line = line('.')
         silent execute "0,$!yapf"
+        silent! bdelete 'error_msg'
         if v:shell_error != 0
             " Shell command failed, so open a new buffer with error text
             execute 'normal! gg"ayG'
@@ -188,6 +189,7 @@ if !exists("*Yapf")
             setlocal buftype=nofile
             setlocal bufhidden=delete
             setlocal noswapfile
+            silent file 'error_msg'
             silent put a
         end
 
