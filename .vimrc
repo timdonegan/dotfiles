@@ -176,9 +176,23 @@ set path+=**
 " Yapf
 if !exists("*Yapf")
     function Yapf()
-        ka
-        0,$!yapf
-        silent! 'a
+        kb
+        let current_line = line('.')
+        silent execute "0,$!yapf"
+        if v:shell_error != 0
+            " Shell command failed, so open a new buffer with error text
+            execute 'normal! gg"ayG'
+            silent undo
+            execute 'normal! ' . current_line . 'G'
+            silent new
+            setlocal buftype=nofile
+            setlocal bufhidden=delete
+            setlocal noswapfile
+            silent put a
+        end
+
+        silent! 'b
+
     endfunction
 endif
 
