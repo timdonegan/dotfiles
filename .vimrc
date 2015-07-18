@@ -176,6 +176,10 @@ set path+=**
 " Yapf
 if !exists("*Yapf")
     function Yapf()
+        if &ft != 'python'
+            return
+        end
+
         kb
         let current_line = line('.')
         silent execute "0,$!yapf"
@@ -198,5 +202,5 @@ if !exists("*Yapf")
     endfunction
 endif
 
-autocmd FileType python nnoremap <silent> <leader>y :call Yapf()<Cr>:w<Cr>
-autocmd BufWritePre *.py call Yapf()
+nnoremap <silent> <leader>y :call Yapf()<Cr>:w<Cr>
+autocmd BufWritePre * call Yapf()
