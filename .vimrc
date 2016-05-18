@@ -85,7 +85,7 @@ nmap <silent> <leader>w :set nolist!<CR>
 set visualbell
 
 " View buffers
-noremap <silent> <Leader>b :buffers<CR>
+noremap <silent> <Leader>b :CtrlPBuffer<CR>
 
 " Tab changes buffer
 nnoremap <Tab> :bn<CR>
@@ -126,6 +126,15 @@ Plugin 'kchmck/vim-coffee-script'
 
 " python autocompletion
 Plugin 'davidhalter/jedi-vim'
+
+" javascript support
+Plugin 'pangloss/vim-javascript'
+
+" fuzzy file search
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" vim status line
+"Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -184,7 +193,7 @@ if !exists("*Yapf")
         let current_line = line('.')
         silent execute "0,$!yapf"
         silent! bdelete 'error_msg'
-        if v:shell_error != 0
+        if v:shell_error != 0 && v:shell_error != 2
             " Shell command failed, so open a new buffer with error text
             execute 'normal! gg"ayG'
             silent undo
@@ -204,3 +213,7 @@ endif
 
 nnoremap <silent> <leader>y :call Yapf()<Cr>:w<Cr>
 autocmd BufWritePre * call Yapf()
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 0
