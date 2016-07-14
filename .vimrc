@@ -5,8 +5,8 @@ set nocompatible
 let mapleader=" "
 
 " Navigation by visual line rather than \n line
-noremap j gj
-noremap k gk
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Allow changing buffers w/o saving
 set hidden
@@ -31,6 +31,7 @@ set incsearch
 
 " show line numbers
 set number
+set relativenumber
 
 "Use jj as escape in insert mode and command line mode
 inoremap jj <C-c>
@@ -133,6 +134,9 @@ Plugin 'pangloss/vim-javascript'
 " fuzzy file search
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Syntax errors
+Plugin 'scrooloose/syntastic.git'
+
 " vim status line
 "Plugin 'bling/vim-airline'
 
@@ -217,3 +221,15 @@ autocmd BufWritePre * call Yapf()
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 0
+
+" Syntastic bullshit
+set statusline = ""
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5
+let g:syntastic_javascript_checkers = ['eslint']
+
+" SQL spacing
+autocmd Filetype sql setlocal ts=2 sts=2 sw=2
