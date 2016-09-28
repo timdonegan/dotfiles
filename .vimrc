@@ -140,6 +140,9 @@ Plugin 'scrooloose/syntastic.git'
 " vim status line
 "Plugin 'bling/vim-airline'
 
+" elixir support
+Plugin 'elixir-lang/vim-elixir'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
