@@ -31,7 +31,6 @@ set incsearch
 
 " show line numbers
 set number
-set relativenumber
 
 "Use jj as escape in insert mode and command line mode
 inoremap jj <C-c>
@@ -103,6 +102,10 @@ noremap <silent> <Leader>l <C-w>l
 noremap <silent> <Leader>h <C-w>h
 noremap <silent> <Leader>k <C-w>k
 noremap <silent> <Leader>j <C-w>j
+
+" http://stackoverflow.com/questions/677986/vim-copy-selection-to-os-x-clipboard
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
 
 " Split resizing
 " set winheight=30
