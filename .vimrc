@@ -92,6 +92,10 @@ nnoremap <Tab> :bn<CR>
 map <Esc>[Z <S-Tab>
 nnoremap <S-Tab> :bp<CR>
 
+" delete buffers without closing window
+" (just switch to next buffer in window)
+nnoremap <Leader>d :bn<CR>:bd#<CR>
+
 " Split creation
 noremap <silent> <Leader>v <C-w>v
 noremap <silent> <Leader>s <C-w>s
@@ -129,7 +133,7 @@ Plugin 'fatih/vim-go'
 Plugin 'kchmck/vim-coffee-script'
 
 " python autocompletion
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 " javascript support
 Plugin 'pangloss/vim-javascript'
@@ -138,13 +142,19 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax errors
-Plugin 'scrooloose/syntastic.git'
+"Plugin 'scrooloose/syntastic.git'
 
 " vim status line
 "Plugin 'bling/vim-airline'
 
 " elixir support
 Plugin 'elixir-lang/vim-elixir'
+
+" typescript support
+Plugin 'leafgarland/typescript-vim'
+
+" js/ts formatting
+Plugin 'prettier/vim-prettier'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -222,7 +232,7 @@ if !exists("*Yapf")
 endif
 
 nnoremap <silent> <leader>y :call Yapf()<Cr>:w<Cr>
-autocmd BufWritePre * call Yapf()
+" autocmd BufWritePre * call Yapf()
 
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
@@ -236,6 +246,27 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_disabled_filetypes=['ts']
+let g:syntastic_html_checkers=['']
 
 " SQL spacing
 autocmd Filetype sql setlocal ts=2 sts=2 sw=2
+
+" Yaml spacing
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+
+" Lua spacing
+autocmd Filetype lua setlocal ts=2 sts=2 sw=2
+
+" Javascript spacing
+autocmd Filetype js setlocal ts=2 sts=2 sw=2
+
+" Typescript spacing
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+
+" Elixir spacing
+autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
+
+" Run prettier on save
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
