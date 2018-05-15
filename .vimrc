@@ -107,6 +107,15 @@ noremap <silent> <Leader>h <C-w>h
 noremap <silent> <Leader>k <C-w>k
 noremap <silent> <Leader>j <C-w>j
 
+" Close brackets, parenthesis, and quotation marks
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " http://stackoverflow.com/questions/677986/vim-copy-selection-to-os-x-clipboard
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
@@ -155,6 +164,12 @@ Plugin 'leafgarland/typescript-vim'
 
 " js/ts formatting
 Plugin 'prettier/vim-prettier'
+
+" kotlin
+Plugin 'udalov/kotlin-vim'
+
+" linting
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -270,3 +285,7 @@ autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
 " Run prettier on save
 "let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+
+let g:ale_linters = {
+\   'go': [],
+\}
